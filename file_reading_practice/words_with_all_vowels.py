@@ -16,7 +16,7 @@ the check should be case-insensitive.
 -------------------------------------------------
 Input Example (sowpods.txt sample):
 education
-sequoia
+sequoiaZa  
 facetious
 hello
 audio
@@ -40,3 +40,28 @@ Explanation:
 =================================================
 
 """
+path = r"C:\Users\D ROSHAN\OneDrive\Documents\GitHub\python-file-handling-Roshan-21v\file_reading_practice\sowpods.txt"
+
+
+result = []
+
+f = open(path, "r")   
+
+for line in f:
+    word = line.strip().lower()
+
+    found = set()
+
+    for ch in word:
+        if ch in {'a', 'e', 'i', 'o', 'u'}:
+            found.add(ch)
+
+    if found == {'a', 'e', 'i', 'o', 'u'}:
+        result.append(word)
+
+f.close()   
+
+for w in result:
+    print(w)
+
+print(f"Total words with all vowels:{len(result)}")

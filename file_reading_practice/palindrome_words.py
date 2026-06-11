@@ -51,3 +51,32 @@ Explanation:
 =================================================
 
 """
+path = (r"C:\Users\D ROSHAN\OneDrive\Documents\GitHub\python-file-handling-Roshan-21v\file_reading_practice\sowpods.txt")
+
+count = 0
+
+def is_palindrome(word):
+    if word == word[::-1]:
+        return True
+    else:
+        return False
+
+
+file = open(path, "r")
+
+for line in file:
+    word = line.strip()
+
+    if is_palindrome(word):
+            print(word)
+            count += 1
+
+
+file.close()
+
+print("Total palindromes:", count)   
+
+
+
+
+    
